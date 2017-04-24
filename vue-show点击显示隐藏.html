@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <input type="button" value="按钮"v-on:click="show()">
+    <div style="width:100px;height:100px;background-color: red" v-show="a"></div>
+</div>
+<script>
+    var a = new Vue({
+        el:'#box',
+        data:{
+           a:true
+        },
+        methods:{
+            show:function(){
+                this.a == true?this.a = false:this.a=true;
+            }
+        }
+    })
+</script>
+</body>
+</html>

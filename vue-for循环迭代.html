@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="box">
+  <ul>
+      <li v-for="(value,index) in arr.a2">
+          {{index+1}}  {{value}}
+      </li>
+  </ul>
+</div>
+<script>
+    var a1 = new Vue({
+        el:'#box',
+        data:{
+            arr:{"a1":"apple","a2":['apple','banner','nihao']},
+            json:{"a1":"apple","a2":"banner"}
+        }
+    })
+</script>
+</body>
+</html>

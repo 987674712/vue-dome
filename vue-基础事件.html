@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="js/jquery-1.7.2.js"></script>-->
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <input type="button" value="按钮" v-on:click="add()">
+    <ul>
+        <li v-for="value in arr">
+            {{value}}
+        </li>
+    </ul>
+</div>
+<script>
+      //v-on:click="add()"简写@click="add()"
+//    jQuery.noConflict(); //jQuery让出"$",也就是jQuery不在全局占用$这个符号,避免命名冲突
+//    (function($){
+//        //在匿名函数里使用$作为jQuery别名,不影响全局
+        window.onload = function(){
+            var a1 = new Vue({
+                el:'#box',
+                data:{
+                    arr:['apple','banner','nihao']
+                },
+                methods:{
+                add:function(){
+
+                    //alert(this.arr) //this访问data中的数据
+                    this.arr.push(1111)
+                }
+            }
+            });
+        };
+//            /*在这里写你的代码*/ }); //这里相当于$(document).ready(function(){});
+//    })(jQuery);
+
+</script>
+</body>
+</html>

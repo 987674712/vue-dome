@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    {{number}}
+    </br>
+    {{a1}}
+    </br>
+    {{arr[1]}}
+    </br>
+    {{json.a1}}
+</div>
+<script>
+    var a1 = new Vue({
+        el:"#box",
+        data:{
+            number:12,
+            a1:true,
+            arr:['apple','banner','nihao'],
+            json:{"a1":"apple","a2":"banner"}
+        }
+    })
+</script>
+</body>
+</html>
