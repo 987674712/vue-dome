@@ -5,7 +5,7 @@
       "server_port": 8388,
       "password": "123456",
       "method": "aes-256-cfb",
-      "remarks": "890819",
+      "remarks": "898989",
       "class":"active"
     },
     {
@@ -18,7 +18,7 @@
     },
     {
       "server": "47.88.225.106",
-      "server_port": 58528,
+      "server_port": 5833528,
       "password": "987674712",
       "method": "aes-256-cfb",
       "remarks": "123465",
@@ -26,7 +26,7 @@
     },
     {
       "server": "47.88.225.106",
-      "server_port": 58528,
+      "server_port": 5822528,
       "password": "987674712",
       "method": "aes-256-cfb",
       "remarks": "123465",
@@ -34,7 +34,7 @@
     },
     {
       "server": "47.88.225.106",
-      "server_port": 58528,
+      "server_port": 58111528,
       "password": "987674712",
       "method": "aes-256-cfb",
       "remarks": "123465",

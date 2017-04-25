@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <input type="button" value="按钮" @contextmenu="show(event)">
+    //禁用鼠标右键功能
+</div>
+<script>
+    window.onload=function(){
+        new Vue({
+            el:'#box',
+            data:{
+
+            },
+            methods:{
+                show:function(ev){
+                    alert(1);
+                    ev.preventDefault();
+                }
+            }
+        });
+    };
+</script>
+</body>
+</html>

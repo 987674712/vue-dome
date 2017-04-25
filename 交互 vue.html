@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="top">
-    <input type="button" value="按钮" @click="get()">
+    <input type="button" value="点击请求数据列表" @click="get()" class="btn btn-primary btn-sm">
     <!--{{medal}}-->
     <table class="table" v-show="type != 1">
         <thead>
@@ -46,7 +46,7 @@
         methods:{
             get:function(){
                 //并发请求，利用 Promise
-                var event = "" //这里是data参数
+                var event = ""; //这里是data参数
                 Promise.all([
                     //简写
                     this.$http.get('js/config.json',event)
