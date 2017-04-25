@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    <input :type="type" v-model="name" v-bind:placeholder="msg">
+    {{name}}
+</div>
+
+<script>
+    //v-model  常用于表单
+ var box = new Vue({
+     el:'#box',
+     data:{
+         msg:'请输入表单信息',
+         name:'',
+         type:"text"
+     }
+ })
+</script>
+</body>
+</html>

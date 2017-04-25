@@ -1,0 +1,54 @@
+{
+  "configs": [
+    {
+      "server": "192.168.1.10",
+      "server_port": 8388,
+      "password": "123456",
+      "method": "aes-256-cfb",
+      "remarks": "890819",
+      "class":"active"
+    },
+    {
+      "server": "47.88.225.106",
+      "server_port": 741100,
+      "password": "987674712",
+      "method": "aes-256-cfb",
+      "remarks": "",
+      "class":"active"
+    },
+    {
+      "server": "47.88.225.106",
+      "server_port": 58528,
+      "password": "987674712",
+      "method": "aes-256-cfb",
+      "remarks": "123465",
+      "class":"info"
+    },
+    {
+      "server": "47.88.225.106",
+      "server_port": 58528,
+      "password": "987674712",
+      "method": "aes-256-cfb",
+      "remarks": "123465",
+      "class":"warning"
+    },
+    {
+      "server": "47.88.225.106",
+      "server_port": 58528,
+      "password": "987674712",
+      "method": "aes-256-cfb",
+      "remarks": "123465",
+      "class":"danger"
+    }
+  ],
+  "strategy": null,
+  "index": 1,
+  "global": true,
+  "enabled": false,
+  "shareOverLan": false,
+  "isDefault": false,
+  "localPort": 1080,
+  "pacUrl": null,
+  "useOnlinePac": false,
+  "availabilityStatistics": true
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <script src="js/vue-resource.js"></script>
+    <link rel="stylesheet" href="js/bootstrap.min.css">
+</head>
+<body>
+<div id="top">
+    <input type="button" value="按钮" @click="get()">
+    <!--{{medal}}-->
+    <table class="table" v-show="type != 1">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>server</th>
+            <th>password</th>
+            <th>server_port</th>
+            <th>method</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(item,index) in medal.configs" :class="item.class">
+            <th scope="row">{{index}}</th>
+            <td>{{item.server}}</td>
+            <td>{{item.password}}</td>
+            <td>{{item.server_port}}</td>
+            <td>{{item.method}}</td>
+            <td>
+                <a href="javascript:" class="btn btn-primary btn-sm" v-on:click="deleteA(index)">删除</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    //vue本身不支持ajax交互 需要引入另一个脚本文件vue-resource.js
+    var a1 = new Vue({
+        el:"#top",
+        data:{
+            medal:"",
+            type:1
+        },
+        methods:{
+            get:function(){
+                //并发请求，利用 Promise
+                var event = "" //这里是data参数
+                Promise.all([
+                    //简写
+                    this.$http.get('js/config.json',event)
+                    //不简写
+//                    this.$http({
+//                        method:'GET',
+//                        url:'js/config.json',
+//                        data:{'websiteId':2,'pageSize':20,'pageNo':1,'isTop':0},
+//                        headers: {"X-Requested-With": "XMLHttpRequest"},
+//                        emulateJSON: true
+//                    })
+                ]).then(function(data){//es5写法
+                    this.medal = data[0].data;
+                    this.type = 0;
+                    console.log(this.medal.configs)
+                }.bind(this),function(error){
+
+                })
+            },
+            deleteA:function(index){
+                console.log(this.medal);
+                this.medal.configs.splice(index,1);
+                this.medal.configs.length == 0?this.type = 1:this.type=0;
+            }
+        }
+    })
+</script>
+</body>
+</html>
