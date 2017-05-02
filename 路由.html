@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路由</title>
+    <script src="js/vue.js"></script>
+    <script src="js/vue-router.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h1>路由小实例</h1>
+    <div>
+        <router-link to="/first">第一页</router-link>
+        <router-link to="/second">第二页</router-link>
+        <router-link to="/third">第三页</router-link>
+    </div>
+    <!--路由将会输出到下面的位置-->
+    <router-view></router-view>
+</div>
+<script>
+    const first = { template: '<div>我这里是第一页</div>' };
+    const second = { template: '<div>你现在看到了第二页</div>' };
+    const third = { template: '<div>这里不是前两页</div>' };
+
+    const routes = [
+        { path: '/first', component: first },
+        { path: '/second', component: second },
+        { path: '/third', component: third }
+    ];
+
+    const router = new VueRouter({
+        routes:routes
+    });
+
+    const app = new Vue({
+        router:router
+    }).$mount('#app')
+</script>
+</body>
+</html>
