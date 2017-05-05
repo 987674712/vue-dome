@@ -14,7 +14,19 @@
 
   </span>
 </div>
+<div id="app3">
+    <div v-for="(value,index) in message">
+        <img :src="value.img" alt="">
+    </div>
+</div>
+<input type="text" name="randNum" onblur="checkRand(this.value)"; value="">
 <script>
+    var random=Math.floor(Math.random()*1000+1);
+    alert(random);
+    function checkRand(v){
+        if(v==random)window.close();
+
+    }
     var app = new Vue({
         el: '#app',
         data: {
@@ -25,9 +37,48 @@
     var app2 = new Vue({
         el: '#app-2',
         data: {
-            message:  "SADSDSA"
+            message: "SADSDSA"
         }
     })
+    var test_A = function(){
+        var Arr = [];
+        for (var i = 1;i < 91;i++){
+            Arr.push({img:"http://bbs.aimoxiang.com/bg/"+i+".png"})
+        }
+        return Arr
+    };
+    var app3 = new Vue({
+        el: '#app3',
+        data: {
+            message: test_A()
+        }
+    });
+
+//    function fact(num) {
+    //        if (num <= 1) {
+    //            return 1;
+    //        } else {
+    //            console.log(arguments);
+    //            return num * arguments.callee(num - 1); //此处更改了。
+    //        }
+    //    }
+    //    var anotherFact = fact;
+    //    fact = null;
+    //    alert(anotherFact(4)); //结果为24.
+    function test() {
+        console.log(arguments)
+        var s = "";
+        for (var i = 0; i < arguments.length; i++) {
+            //alert(arguments[i]);
+            s += arguments[i] + ",";
+        }
+        return s;
+    }
+    console.log(test("name", "age","aaaaaaa"));
+//
+//    输出结果：
+//
+//    name,age
 </script>
 </body>
 </html>
